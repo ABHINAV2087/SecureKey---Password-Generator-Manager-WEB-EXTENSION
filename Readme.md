@@ -5,6 +5,12 @@ Do you often forget your passwords just like I do? 😵‍💫 If yes, then **Se
 
 SecureKey is a Chrome extension that not only generates strong passwords but also allows you to securely store them along with the associated accounts. With a user authentication system, only registered users can store and manage their passwords, ensuring maximum security.
 
+## Preview 
+![Demo Image](demo/1.png)
+![Demo Image](demo/2.png)
+![Demo Image](demo/3.png)
+
+
 ## Features
 ✅ **Secure Password Generation**: Generate strong, random passwords effortlessly.  
 ✅ **Account Management**: Create an account and log in securely to manage your stored passwords.  
