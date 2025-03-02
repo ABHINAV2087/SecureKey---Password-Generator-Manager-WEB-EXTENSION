@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureKey</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Password Manager</h1>
+    
+    <!-- Login/Signup Form -->
+    <div id="auth-container">
+      <div class="tab-container">
+        <button class="tab-btn active" id="login-tab">Login</button>
+        <button class="tab-btn" id="signup-tab">Signup</button>
+      </div>
+      
+      <div id="login-form" class="auth-form active">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Master Password" required>
+        <button id="login-btn">Login</button>
+        <p id="login-error" class="error-message"></p>
+      </div>
+      
+      <div id="signup-form" class="auth-form">
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Master Password" required>
+        <input type="password" id="signup-confirm" placeholder="Confirm Master Password" required>
+        <button id="signup-btn">Create Account</button>
+        <p id="signup-error" class="error-message"></p>
+      </div>
+    </div>
+    
+    <!-- Main App Container (Shown after login) -->
+    <div id="app-container" class="hidden">
+      <button id="logout-btn">Logout</button>
+      
+      <!-- Password Generator -->
+      <div class="section">
+        <h2>Generate Password</h2>
+        <div class="password-options">
+          <label>
+            Length:
+            <input type="number" id="password-length" min="8" max="32" value="12">
+          </label>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" id="include-uppercase" checked>
+              Uppercase (A-Z)
+            </label>
+            <label>
+              <input type="checkbox" id="include-lowercase" checked>
+              Lowercase (a-z)
+            </label>
+            <label>
+              <input type="checkbox" id="include-numbers" checked>
+              Numbers (0-9)
+            </label>
+            <label>
+              <input type="checkbox" id="include-symbols" checked>
+              Symbols (!@#$%^&*)
+            </label>
+          </div>
+        </div>
+        <div class="password-result">
+          <input type="text" id="generated-password" readonly>
+          <button id="copy-password">Copy</button>
+          <button id="generate-btn">Generate</button>
+        </div>
+      </div>
+      
+      <!-- Save Password -->
+      <div class="section">
+        <h2>Save Password</h2>
+        <input type="text" id="account-name" placeholder="Website or Account Name">
+        <input type="text" id="username" placeholder="Username or Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="save-password-btn">Save Password</button>
+        <p id="save-message"></p>
+      </div>
+      
+      <!-- Stored Passwords -->
+      <div class="section">
+        <h2>Stored Passwords</h2>
+        <div id="passwords-list">
+          <!-- Passwords will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../lib/crypto-js.min.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/passwordGenerator.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
